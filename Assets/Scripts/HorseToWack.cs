@@ -17,6 +17,7 @@ public class HorseToWack : MonoBehaviour {
         /*if(other.gameObject.GetComponent<controller>())
          * {
          *      Destroy(this.gameObject);
+         *      
          * }
          * */
     }
