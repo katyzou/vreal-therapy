@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour {
     public void WhackAMole()
     {
         MainMenuUi.SetActive(false);
-        //Application.LoadLevel(1);
+        Application.LoadLevel(1);
     }
 
     public void BakeACake()
