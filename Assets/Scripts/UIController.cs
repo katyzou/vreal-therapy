@@ -7,6 +7,11 @@ public class UIController : MonoBehaviour {
     public GameObject MainMenuUi;
     public GameObject CreditsUI;
 
+    /* Buttons hexavalues:
+     * highlight: 00FF21FF
+     * clicked: F95656FF
+     */
+    
 	// Use this for initialization
 	void Start () {
 		
@@ -21,13 +26,16 @@ public class UIController : MonoBehaviour {
     public void BakeACake()
     {
         MainMenuUi.SetActive(false);
-        //Application.LoadLevel(2);
+        //Application.LoadLevel(3);
     }
 
     public void TakeAWalk()
     {
         MainMenuUi.SetActive(false);
-        //Application.LoadLevel(3);
+        Application.LoadLevel(2);
+        //forest
+        //desert
+        //iceland
     }
 
     public void Credits()
@@ -44,6 +52,7 @@ public class UIController : MonoBehaviour {
 
     public void BackToMainMenu()
     {
-
+        Application.LoadLevel(0);
+        
     }
 }
