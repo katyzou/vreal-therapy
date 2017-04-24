@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/main.unity.meta
+guid: e9e797895755a5540bc951a692f068a6
+timeCreated: 1487636591
+=======
 guid: d7406bd3e079b8f40bbff78bd4131d28
 timeCreated: 1492990378
+>>>>>>> c1841ccc64d9dfada5ee9ad0a1426aac5bcec516:Assets/Scenes/Desert.unity.meta
 licenseType: Free
 DefaultImporter:
   userData: 
