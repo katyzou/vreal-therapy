@@ -15,7 +15,7 @@ public class PlayerObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        mainCamera.transform.position = new Vector3(this.transform.position.x, 10f, this.transform.position.z);
+        mainCamera.transform.position = new Vector3(this.transform.position.x, 13.21625f, this.transform.position.z);
 
         if (Input.GetKey("a"))
         {
@@ -41,6 +41,6 @@ public class PlayerObject : MonoBehaviour {
     {
         //Debug.Log("sdafsdafS");
         //mainCamera.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
-        //mainCamera.transform.position = this.transform.position;
+       // mainCamera.transform.position = this.transform.position;
     }
 }
