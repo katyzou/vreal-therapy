@@ -14,8 +14,11 @@ public class Snow : MonoBehaviour {
         this.transform.position = mainCamera.ScreenToWorldPoint(temp);
 
     }
-    private void OnMouseEnter()
+    void OnTriggerEnter(Collider other)
     {
-        //instantiate sound or exclamation mark
+        /*if (other.GetComponent<ControllerL or R>())
+        {
+            make block follow the controller;
+        }*/
     }
 }
