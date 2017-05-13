@@ -56,7 +56,9 @@ public class BowlCollision : MonoBehaviour {
         }
         else {
             Debug.Log("WRONG ITEM");
-            this.GetComponent<ParticleSystemRenderer>().material = new Color(1,0,0,1);
+
+            //TODO: following line doesn't compile
+            //this.GetComponent<ParticleSystemRenderer>().material = new Color(1,0,0,1);
         }
     
 
