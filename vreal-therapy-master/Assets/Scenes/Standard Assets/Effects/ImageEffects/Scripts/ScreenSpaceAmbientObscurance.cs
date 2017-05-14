@@ -45,6 +45,7 @@ namespace UnityStandardAssets.ImageEffects
                 Graphics.Blit (source, destination);
                 return;
             }
+<<<<<<< HEAD
 			Camera camera = GetComponent<Camera>();
 
             Matrix4x4 P = camera.projectionMatrix;
@@ -77,6 +78,18 @@ namespace UnityStandardAssets.ImageEffects
 			}
 
 			aoMaterial.SetVector ("_ProjInfo", projInfo); // used for unprojection
+=======
+
+            Matrix4x4 P = GetComponent<Camera>().projectionMatrix;
+            var invP= P.inverse;
+            Vector4 projInfo = new Vector4
+                ((-2.0f / (Screen.width * P[0])),
+                 (-2.0f / (Screen.height * P[5])),
+                 ((1.0f - P[2]) / P[0]),
+                 ((1.0f + P[6]) / P[5]));
+
+            aoMaterial.SetVector ("_ProjInfo", projInfo); // used for unprojection
+>>>>>>> refs/remotes/origin/master
             aoMaterial.SetMatrix ("_ProjectionInv", invP); // only used for reference
             aoMaterial.SetTexture ("_Rand", rand); // not needed for DX11 :)
             aoMaterial.SetFloat ("_Radius", radius);

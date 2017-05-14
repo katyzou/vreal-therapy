@@ -16,7 +16,10 @@ SubShader {
 	uniform half4 _ArScale;		
 	uniform half _Intensity; 
 	uniform half4 _Source_TexelSize;
+<<<<<<< HEAD
 	half4 _Source_ST;
+=======
+>>>>>>> refs/remotes/origin/master
 	
 	struct v2f {
 		half4 pos : SV_POSITION;
@@ -35,9 +38,15 @@ SubShader {
 		o.uv2.xy = v.texcoord.xy;// * 2.0; <- needed when using Triangles.js and not Quads.js
 		
 		#if UNITY_UV_STARTS_AT_TOP
+<<<<<<< HEAD
 			float4 bokeh = tex2Dlod (_Source, half4 (UnityStereoScreenSpaceUVAdjust(v.texcoord1.xy * half2(1,-1) + half2(0,1), _Source_ST), 0, 0));
 		#else
 			float4 bokeh = tex2Dlod (_Source, half4 (UnityStereoScreenSpaceUVAdjust(v.texcoord1.xy, _Source_ST), 0, 0));
+=======
+			float4 bokeh = tex2Dlod (_Source, half4 (v.texcoord1.xy * half2(1,-1) + half2(0,1), 0, 0));
+		#else
+			float4 bokeh = tex2Dlod (_Source, half4 (v.texcoord1.xy, 0, 0));
+>>>>>>> refs/remotes/origin/master
 		#endif
 		
 		o.source = bokeh;			

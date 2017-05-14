@@ -14,7 +14,10 @@ namespace UnityStandardAssets.ImageEffects
         public enum TiltShiftQuality
         {
             Preview,
+<<<<<<< HEAD
 			Low,
+=======
+>>>>>>> refs/remotes/origin/master
             Normal,
             High,
         }
@@ -36,7 +39,11 @@ namespace UnityStandardAssets.ImageEffects
 
 
         public override bool CheckResources () {
+<<<<<<< HEAD
             CheckSupport (false);
+=======
+            CheckSupport (true);
+>>>>>>> refs/remotes/origin/master
 
             tiltShiftMaterial = CheckShaderAndCreateMaterial (tiltShiftShader, tiltShiftMaterial);
 
@@ -66,7 +73,11 @@ namespace UnityStandardAssets.ImageEffects
 
             if (downsample > 0) {
                 tiltShiftMaterial.SetTexture ("_Blurred", rt);
+<<<<<<< HEAD
                 Graphics.Blit (source, destination, tiltShiftMaterial, 8);
+=======
+                Graphics.Blit (source, destination, tiltShiftMaterial, 6);
+>>>>>>> refs/remotes/origin/master
             }
 
             if (rt != destination)

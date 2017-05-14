@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: c5e937cc4907e7540959f0fe76b039b0
+timeCreated: 1485636547
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Composant_1
+    100004: Composant_15
+    100006: Composant_16
+    100008: Composant_17
+    100010: Composant_18
+    100012: Composant_2
+    100014: Composant_4
+    100016: Composant_4 1
+    100018: Composant_5
+    100020: Composant_5 1
+    100022: Composant_5 2
+    100024: Composant_5 3
+    100026: ID112
+    100028: ID118
+    100030: ID139
+    100032: ID153
+    100034: ID318
+    100036: ID326
+    100038: ID332
+    100040: ID340
+    100042: ID348
+    100044: ID373
+    100046: ID386
+    100048: ID394
+    100050: ID407
+    100052: ID415
+    100054: ID428
+    100056: ID436
+    100058: ID449
+    100060: ID462
+    100062: ID470
+    100064: ID478
+    100066: ID491
+    100068: ID499
+    100070: ID512
+    100072: ID518
+    100074: ID523
+    100076: ID528
+    100078: ID533
+    100080: ID538
+    100082: ID543
+    100084: ID73
+    100086: ID86
+    100088: ID99
+    100090: instance_0
+    100092: instance_1
+    100094: instance_10
+    100096: instance_11
+    100098: instance_2
+    100100: instance_3
+    100102: instance_4
+    100104: instance_5
+    100106: instance_6
+    100108: instance_7
+    100110: instance_8
+    100112: instance_9
+    100114: Last Saved SketchUp View
+    100116: sphere
+    100118: sphere 1
+    100120: sphere 10
+    100122: sphere 11
+    100124: sphere 12
+    100126: sphere 13
+    100128: sphere 14
+    100130: sphere 15
+    100132: sphere 16
+    100134: sphere 17
+    100136: sphere 18
+    100138: sphere 19
+    100140: sphere 2
+    100142: sphere 20
+    100144: sphere 21
+    100146: sphere 22
+    100148: sphere 23
+    100150: sphere 3
+    100152: sphere 4
+    100154: sphere 5
+    100156: sphere 6
+    100158: sphere 7
+    100160: sphere 8
+    100162: sphere 9
+    400000: //RootNode
+    400002: Composant_1
+    400004: Composant_15
+    400006: Composant_16
+    400008: Composant_17
+    400010: Composant_18
+    400012: Composant_2
+    400014: Composant_4
+    400016: Composant_4 1
+    400018: Composant_5
+    400020: Composant_5 1
+    400022: Composant_5 2
+    400024: Composant_5 3
+    400026: ID112
+    400028: ID118
+    400030: ID139
+    400032: ID153
+    400034: ID318
+    400036: ID326
+    400038: ID332
+    400040: ID340
+    400042: ID348
+    400044: ID373
+    400046: ID386
+    400048: ID394
+    400050: ID407
+    400052: ID415
+    400054: ID428
+    400056: ID436
+    400058: ID449
+    400060: ID462
+    400062: ID470
+    400064: ID478
+    400066: ID491
+    400068: ID499
+    400070: ID512
+    400072: ID518
+    400074: ID523
+    400076: ID528
+    400078: ID533
+    400080: ID538
+    400082: ID543
+    400084: ID73
+    400086: ID86
+    400088: ID99
+    400090: instance_0
+    400092: instance_1
+    400094: instance_10
+    400096: instance_11
+    400098: instance_2
+    400100: instance_3
+    400102: instance_4
+    400104: instance_5
+    400106: instance_6
+    400108: instance_7
+    400110: instance_8
+    400112: instance_9
+    400114: Last Saved SketchUp View
+    400116: sphere
+    400118: sphere 1
+    400120: sphere 10
+    400122: sphere 11
+    400124: sphere 12
+    400126: sphere 13
+    400128: sphere 14
+    400130: sphere 15
+    400132: sphere 16
+    400134: sphere 17
+    400136: sphere 18
+    400138: sphere 19
+    400140: sphere 2
+    400142: sphere 20
+    400144: sphere 21
+    400146: sphere 22
+    400148: sphere 23
+    400150: sphere 3
+    400152: sphere 4
+    400154: sphere 5
+    400156: sphere 6
+    400158: sphere 7
+    400160: sphere 8
+    400162: sphere 9
+    2300000: Composant_1
+    2300002: Composant_15
+    2300004: Composant_16
+    2300006: Composant_18
+    2300008: Composant_2
+    2300010: Composant_4
+    2300012: Composant_4 1
+    2300014: Composant_5
+    2300016: Composant_5 1
+    2300018: Composant_5 2
+    2300020: Composant_5 3
+    2300022: ID112
+    2300024: ID118
+    2300026: ID139
+    2300028: ID318
+    2300030: ID326
+    2300032: ID332
+    2300034: ID340
+    2300036: ID348
+    2300038: ID373
+    2300040: ID386
+    2300042: ID394
+    2300044: ID407
+    2300046: ID415
+    2300048: ID428
+    2300050: ID436
+    2300052: ID449
+    2300054: ID462
+    2300056: ID470
+    2300058: ID478
+    2300060: ID491
+    2300062: ID499
+    2300064: ID73
+    2300066: ID86
+    2300068: ID99
+    2300070: sphere
+    2300072: sphere 1
+    2300074: sphere 10
+    2300076: sphere 11
+    2300078: sphere 12
+    2300080: sphere 13
+    2300082: sphere 14
+    2300084: sphere 15
+    2300086: sphere 16
+    2300088: sphere 17
+    2300090: sphere 18
+    2300092: sphere 19
+    2300094: sphere 2
+    2300096: sphere 20
+    2300098: sphere 21
+    2300100: sphere 22
+    2300102: sphere 23
+    2300104: sphere 3
+    2300106: sphere 4
+    2300108: sphere 5
+    2300110: sphere 6
+    2300112: sphere 7
+    2300114: sphere 8
+    2300116: sphere 9
+    3300000: Composant_1
+    3300002: Composant_15
+    3300004: Composant_16
+    3300006: Composant_18
+    3300008: Composant_2
+    3300010: Composant_4
+    3300012: Composant_4 1
+    3300014: Composant_5
+    3300016: Composant_5 1
+    3300018: Composant_5 2
+    3300020: Composant_5 3
+    3300022: ID112
+    3300024: ID118
+    3300026: ID139
+    3300028: ID318
+    3300030: ID326
+    3300032: ID332
+    3300034: ID340
+    3300036: ID348
+    3300038: ID373
+    3300040: ID386
+    3300042: ID394
+    3300044: ID407
+    3300046: ID415
+    3300048: ID428
+    3300050: ID436
+    3300052: ID449
+    3300054: ID462
+    3300056: ID470
+    3300058: ID478
+    3300060: ID491
+    3300062: ID499
+    3300064: ID73
+    3300066: ID86
+    3300068: ID99
+    3300070: sphere
+    3300072: sphere 1
+    3300074: sphere 10
+    3300076: sphere 11
+    3300078: sphere 12
+    3300080: sphere 13
+    3300082: sphere 14
+    3300084: sphere 15
+    3300086: sphere 16
+    3300088: sphere 17
+    3300090: sphere 18
+    3300092: sphere 19
+    3300094: sphere 2
+    3300096: sphere 20
+    3300098: sphere 21
+    3300100: sphere 22
+    3300102: sphere 23
+    3300104: sphere 3
+    3300106: sphere 4
+    3300108: sphere 5
+    3300110: sphere 6
+    3300112: sphere 7
+    3300114: sphere 8
+    3300116: sphere 9
+    4300000: Composant_1
+    4300002: ID139
+    4300004: Composant_18
+    4300006: ID73
+    4300008: ID86
+    4300010: ID99
+    4300012: ID112
+    4300014: ID118
+    4300016: sphere
+    4300018: sphere
+    4300020: sphere
+    4300022: Composant_5
+    4300024: Composant_4
+    4300026: Composant_2
+    4300028: ID373
+    4300030: ID386
+    4300032: ID394
+    4300034: ID407
+    4300036: ID415
+    4300038: ID428
+    4300040: ID436
+    4300042: ID449
+    4300044: ID462
+    4300046: ID470
+    4300048: ID478
+    4300050: ID491
+    4300052: ID499
+    4300054: Composant_15
+    4300056: ID318
+    4300058: ID326
+    4300060: ID332
+    4300062: ID340
+    4300064: ID348
+    4300066: sphere
+    4300068: sphere
+    4300070: sphere
+    4300072: sphere
+    4300074: sphere
+    4300076: sphere
+    4300078: sphere
+    4300080: sphere
+    4300082: sphere
+    4300084: sphere
+    4300086: sphere
+    4300088: sphere
+    4300090: sphere
+    4300092: sphere
+    4300094: sphere
+    4300096: sphere
+    4300098: sphere
+    4300100: sphere
+    4300102: sphere
+    4300104: sphere
+    4300106: sphere
+    4300108: Composant_16
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

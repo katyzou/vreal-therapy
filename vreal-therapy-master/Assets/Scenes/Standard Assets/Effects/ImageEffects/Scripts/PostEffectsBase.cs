@@ -1,5 +1,8 @@
 using System;
+<<<<<<< HEAD
 using System.Collections.Generic;
+=======
+>>>>>>> refs/remotes/origin/master
 using UnityEngine;
 
 namespace UnityStandardAssets.ImageEffects
@@ -12,8 +15,11 @@ namespace UnityStandardAssets.ImageEffects
         protected bool  supportDX11 = false;
         protected bool  isSupported = true;
 
+<<<<<<< HEAD
         private List<Material> createdMaterials = new List<Material> ();
 
+=======
+>>>>>>> refs/remotes/origin/master
         protected Material CheckShaderAndCreateMaterial ( Shader s, Material m2Create)
 		{
             if (!s)
@@ -32,6 +38,7 @@ namespace UnityStandardAssets.ImageEffects
                 Debug.Log("The shader " + s.ToString() + " on effect "+ToString()+" is not supported on this platform!");
                 return null;
             }
+<<<<<<< HEAD
 
             m2Create = new Material (s);
             createdMaterials.Add (m2Create);
@@ -39,6 +46,17 @@ namespace UnityStandardAssets.ImageEffects
 
             return m2Create;
 		}
+=======
+            else
+			{
+                m2Create = new Material (s);
+                m2Create.hideFlags = HideFlags.DontSave;
+                if (m2Create)
+                    return m2Create;
+                else return null;
+            }
+        }
+>>>>>>> refs/remotes/origin/master
 
 
         protected Material CreateMaterial (Shader s, Material m2Create)
@@ -56,6 +74,7 @@ namespace UnityStandardAssets.ImageEffects
 			{
                 return null;
             }
+<<<<<<< HEAD
 
             m2Create = new Material (s);
             createdMaterials.Add (m2Create);
@@ -63,12 +82,24 @@ namespace UnityStandardAssets.ImageEffects
                 
             return m2Create;
 		}
+=======
+            else
+			{
+                m2Create = new Material (s);
+                m2Create.hideFlags = HideFlags.DontSave;
+                if (m2Create)
+                    return m2Create;
+                else return null;
+            }
+        }
+>>>>>>> refs/remotes/origin/master
 
         void OnEnable ()
 		{
             isSupported = true;
         }
 
+<<<<<<< HEAD
         void OnDestroy ()
         {
             RemoveCreatedMaterials ();    
@@ -88,6 +119,8 @@ namespace UnityStandardAssets.ImageEffects
             }
         }
 
+=======
+>>>>>>> refs/remotes/origin/master
         protected bool CheckSupport ()
 		{
             return CheckSupport (false);
@@ -112,7 +145,11 @@ namespace UnityStandardAssets.ImageEffects
             supportHDRTextures = SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGBHalf);
             supportDX11 = SystemInfo.graphicsShaderLevel >= 50 && SystemInfo.supportsComputeShaders;
 
+<<<<<<< HEAD
             if (!SystemInfo.supportsImageEffects)
+=======
+            if (!SystemInfo.supportsImageEffects || !SystemInfo.supportsRenderTextures)
+>>>>>>> refs/remotes/origin/master
 			{
                 NotSupported ();
                 return false;
