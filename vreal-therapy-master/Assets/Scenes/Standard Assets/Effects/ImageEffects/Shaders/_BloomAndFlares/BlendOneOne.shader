@@ -15,12 +15,27 @@ Shader "Hidden/BlendOneOne" {
 	};
 		
 	sampler2D _MainTex;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	half4     _MainTex_ST;
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	half _Intensity;
 		
 	v2f vert( appdata_img v ) {
 		v2f o;
 		o.pos = UnityObjectToClipPos(v.vertex);
+<<<<<<< HEAD
 		o.uv =  v.texcoord.xy;
+=======
+<<<<<<< HEAD
+		o.uv = UnityStereoScreenSpaceUVAdjust(v.texcoord.xy, _MainTex_ST);
+=======
+		o.uv =  v.texcoord.xy;
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		return o;
 	}
 	

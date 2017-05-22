@@ -55,7 +55,15 @@ float4 frag (v2f i) : SV_Target
 	uv.y = sinLength * offset[0] + cosLength * offset[1];
 	uv += _CenterRadius.xy;
 	
+<<<<<<< HEAD
 	return tex2D(_MainTex, uv);
+=======
+<<<<<<< HEAD
+	return tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(uv, _MainTex_ST));
+=======
+	return tex2D(_MainTex, uv);
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 }
 ENDCG
 

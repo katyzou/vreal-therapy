@@ -26,7 +26,11 @@ public class UIController : MonoBehaviour {
     public void BakeACake()
     {
         MainMenuUi.SetActive(false);
+<<<<<<< HEAD
         Application.LoadLevel(3);
+=======
+        //Application.LoadLevel(3);
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
     }
 
     public void TakeAWalk()

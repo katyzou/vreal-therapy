@@ -22,9 +22,25 @@ Shader "Hidden/EdgeDetect" {
 
 	sampler2D _MainTex;
 	uniform float4 _MainTex_TexelSize;
+<<<<<<< HEAD
 
 	sampler2D _CameraDepthNormalsTexture;
 	sampler2D_float _CameraDepthTexture;
+=======
+<<<<<<< HEAD
+	half4 _MainTex_ST;
+
+	sampler2D _CameraDepthNormalsTexture;
+	half4 _CameraDepthNormalsTexture_ST;
+
+	sampler2D_float _CameraDepthTexture;
+	half4 _CameraDepthTexture_ST;
+=======
+
+	sampler2D _CameraDepthNormalsTexture;
+	sampler2D_float _CameraDepthTexture;
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 	uniform half4 _Sensitivity; 
 	uniform half4 _BgColor;
@@ -44,9 +60,21 @@ Shader "Hidden/EdgeDetect" {
 		v2flum o;
 		o.pos = UnityObjectToClipPos (v.vertex);
 		float2 uv = MultiplyUV( UNITY_MATRIX_TEXTURE0, v.texcoord );
+<<<<<<< HEAD
 		o.uv[0] = uv;
 		o.uv[1] = uv + float2(-_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance;
 		o.uv[2] = uv + float2(+_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance;
+=======
+<<<<<<< HEAD
+		o.uv[0] = UnityStereoScreenSpaceUVAdjust(uv, _MainTex_ST);
+		o.uv[1] = UnityStereoScreenSpaceUVAdjust(uv + float2(-_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance, _MainTex_ST);
+		o.uv[2] = UnityStereoScreenSpaceUVAdjust(uv + float2(+_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance, _MainTex_ST);
+=======
+		o.uv[0] = uv;
+		o.uv[1] = uv + float2(-_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance;
+		o.uv[2] = uv + float2(+_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance;
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		return o;
 	}
 
@@ -95,7 +123,15 @@ Shader "Hidden/EdgeDetect" {
 		o.pos = UnityObjectToClipPos(v.vertex);
 		
 		float2 uv = v.texcoord.xy;
+<<<<<<< HEAD
 		o.uv[0] = uv;
+=======
+<<<<<<< HEAD
+		o.uv[0] = UnityStereoScreenSpaceUVAdjust(uv, _MainTex_ST);
+=======
+		o.uv[0] = uv;
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		
 		#if UNITY_UV_STARTS_AT_TOP
 		if (_MainTex_TexelSize.y < 0)
@@ -105,10 +141,23 @@ Shader "Hidden/EdgeDetect" {
 		// calc coord for the X pattern
 		// maybe nicer TODO for the future: 'rotated triangles'
 		
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		o.uv[1] = UnityStereoScreenSpaceUVAdjust(uv + _MainTex_TexelSize.xy * half2(1,1) * _SampleDistance, _MainTex_ST);
+		o.uv[2] = UnityStereoScreenSpaceUVAdjust(uv + _MainTex_TexelSize.xy * half2(-1,-1) * _SampleDistance, _MainTex_ST);
+		o.uv[3] = UnityStereoScreenSpaceUVAdjust(uv + _MainTex_TexelSize.xy * half2(-1,1) * _SampleDistance, _MainTex_ST);
+		o.uv[4] = UnityStereoScreenSpaceUVAdjust(uv + _MainTex_TexelSize.xy * half2(1,-1) * _SampleDistance, _MainTex_ST);
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		o.uv[1] = uv + _MainTex_TexelSize.xy * half2(1,1) * _SampleDistance;
 		o.uv[2] = uv + _MainTex_TexelSize.xy * half2(-1,-1) * _SampleDistance;
 		o.uv[3] = uv + _MainTex_TexelSize.xy * half2(-1,1) * _SampleDistance;
 		o.uv[4] = uv + _MainTex_TexelSize.xy * half2(1,-1) * _SampleDistance;
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 				 
 		return o;
 	} 
@@ -119,19 +168,42 @@ Shader "Hidden/EdgeDetect" {
 		o.pos = UnityObjectToClipPos (v.vertex);
 		
 		float2 uv = v.texcoord.xy;
+<<<<<<< HEAD
 		o.uv[0] = uv;
+=======
+<<<<<<< HEAD
+		o.uv[0] = UnityStereoScreenSpaceUVAdjust(uv, _MainTex_ST);
+=======
+		o.uv[0] = uv;
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		
 		#if UNITY_UV_STARTS_AT_TOP
 		if (_MainTex_TexelSize.y < 0)
 			uv.y = 1-uv.y;
 		#endif
 		
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		o.uv[1] = UnityStereoScreenSpaceUVAdjust(uv, _MainTex_ST);
+		o.uv[4] = UnityStereoScreenSpaceUVAdjust(uv, _MainTex_ST);
+				
+		// offsets for two additional samples
+		o.uv[2] = UnityStereoScreenSpaceUVAdjust(uv + float2(-_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance, _MainTex_ST);
+		o.uv[3] = UnityStereoScreenSpaceUVAdjust(uv + float2(+_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance, _MainTex_ST);
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		o.uv[1] = uv;
 		o.uv[4] = uv;
 				
 		// offsets for two additional samples
 		o.uv[2] = uv + float2(-_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance;
 		o.uv[3] = uv + float2(+_MainTex_TexelSize.x, -_MainTex_TexelSize.y) * _SampleDistance;
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		
 		return o;
 	}	  
@@ -164,6 +236,20 @@ Shader "Hidden/EdgeDetect" {
 
 		float2 uvDist = _SampleDistance * _MainTex_TexelSize.xy;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		depthsDiag.x = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]+uvDist, _CameraDepthTexture_ST))); // TR
+		depthsDiag.y = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]+uvDist*float2(-1,1), _CameraDepthTexture_ST))); // TL
+		depthsDiag.z = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]-uvDist*float2(-1,1), _CameraDepthTexture_ST))); // BR
+		depthsDiag.w = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]-uvDist, _CameraDepthTexture_ST))); // BL
+
+		depthsAxis.x = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]+uvDist*float2(0,1), _CameraDepthTexture_ST))); // T
+		depthsAxis.y = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]-uvDist*float2(1,0), _CameraDepthTexture_ST))); // L
+		depthsAxis.z = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]+uvDist*float2(1,0), _CameraDepthTexture_ST))); // R
+		depthsAxis.w = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]-uvDist*float2(0,1), _CameraDepthTexture_ST))); // B
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		depthsDiag.x = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]+uvDist)); // TR
 		depthsDiag.y = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]+uvDist*float2(-1,1))); // TL
 		depthsDiag.z = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]-uvDist*float2(-1,1))); // BR
@@ -173,6 +259,10 @@ Shader "Hidden/EdgeDetect" {
 		depthsAxis.y = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]-uvDist*float2(1,0))); // L
 		depthsAxis.z = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]+uvDist*float2(1,0))); // R
 		depthsAxis.w = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]-uvDist*float2(0,1))); // B
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 		depthsDiag -= centerDepth;
 		depthsAxis /= centerDepth;
@@ -190,7 +280,15 @@ Shader "Hidden/EdgeDetect" {
 		float Sobel = sqrt(SobelX * SobelX + SobelY * SobelY);
 
 		Sobel = 1.0-pow(saturate(Sobel), _Exponent);
+<<<<<<< HEAD
 		return Sobel * lerp(tex2D(_MainTex, i.uv[0].xy), _BgColor, _BgFade);
+=======
+<<<<<<< HEAD
+		return Sobel * lerp(tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST)), _BgColor, _BgFade);
+=======
+		return Sobel * lerp(tex2D(_MainTex, i.uv[0].xy), _BgColor, _BgFade);
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	}
 
 	// pretty much also just a sobel filter, except for that edges "outside" the silhouette get discarded
@@ -200,12 +298,34 @@ Shader "Hidden/EdgeDetect" {
 	{	
 		// inspired by borderlands implementation of popular "sobel filter"
 
+<<<<<<< HEAD
 		float centerDepth = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv[1]));
+=======
+<<<<<<< HEAD
+		float centerDepth = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1], _CameraDepthTexture_ST)));
+=======
+		float centerDepth = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv[1]));
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		float4 depthsDiag;
 		float4 depthsAxis;
 
 		float2 uvDist = _SampleDistance * _MainTex_TexelSize.xy;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		depthsDiag.x = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]+uvDist, _CameraDepthTexture_ST))); // TR
+		depthsDiag.y = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]+uvDist*float2(-1,1), _CameraDepthTexture_ST))); // TL
+		depthsDiag.z = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]-uvDist*float2(-1,1), _CameraDepthTexture_ST))); // BR
+		depthsDiag.w = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]-uvDist, _CameraDepthTexture_ST))); // BL
+
+		depthsAxis.x = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]+uvDist*float2(0,1), _CameraDepthTexture_ST))); // T
+		depthsAxis.y = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]-uvDist*float2(1,0), _CameraDepthTexture_ST))); // L
+		depthsAxis.z = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]+uvDist*float2(1,0), _CameraDepthTexture_ST))); // R
+		depthsAxis.w = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, UnityStereoScreenSpaceUVAdjust(i.uv[1]-uvDist*float2(0,1), _CameraDepthTexture_ST))); // B
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		depthsDiag.x = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]+uvDist)); // TR
 		depthsDiag.y = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]+uvDist*float2(-1,1))); // TL
 		depthsDiag.z = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]-uvDist*float2(-1,1))); // BR
@@ -215,6 +335,10 @@ Shader "Hidden/EdgeDetect" {
 		depthsAxis.y = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]-uvDist*float2(1,0))); // L
 		depthsAxis.z = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]+uvDist*float2(1,0))); // R
 		depthsAxis.w = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv[1]-uvDist*float2(0,1))); // B
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 		// make it work nicely with depth based image effects such as depth of field:
 		depthsDiag = (depthsDiag > centerDepth.xxxx) ? depthsDiag : centerDepth.xxxx;
@@ -236,7 +360,15 @@ Shader "Hidden/EdgeDetect" {
 		float Sobel = sqrt(SobelX * SobelX + SobelY * SobelY);
 
 		Sobel = 1.0-pow(saturate(Sobel), _Exponent);
+<<<<<<< HEAD
 		return Sobel * lerp(tex2D(_MainTex, i.uv[0].xy), _BgColor, _BgFade);
+=======
+<<<<<<< HEAD
+		return Sobel * lerp(tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv[0].xy, _MainTex_ST)), _BgColor, _BgFade);
+=======
+		return Sobel * lerp(tex2D(_MainTex, i.uv[0].xy), _BgColor, _BgFade);
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	}
 
 	half4 fragRobert(v2f i) : SV_Target {				

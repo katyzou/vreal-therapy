@@ -1,4 +1,11 @@
 using System;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+using System.Collections.Generic;
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 using UnityEngine;
 
 namespace UnityStandardAssets.ImageEffects
@@ -11,6 +18,14 @@ namespace UnityStandardAssets.ImageEffects
         protected bool  supportDX11 = false;
         protected bool  isSupported = true;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        private List<Material> createdMaterials = new List<Material> ();
+
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
         protected Material CheckShaderAndCreateMaterial ( Shader s, Material m2Create)
 		{
             if (!s)
@@ -29,6 +44,18 @@ namespace UnityStandardAssets.ImageEffects
                 Debug.Log("The shader " + s.ToString() + " on effect "+ToString()+" is not supported on this platform!");
                 return null;
             }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+            m2Create = new Material (s);
+            createdMaterials.Add (m2Create);
+            m2Create.hideFlags = HideFlags.DontSave;
+
+            return m2Create;
+		}
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
             else
 			{
                 m2Create = new Material (s);
@@ -38,6 +65,10 @@ namespace UnityStandardAssets.ImageEffects
                 else return null;
             }
         }
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 
         protected Material CreateMaterial (Shader s, Material m2Create)
@@ -55,6 +86,18 @@ namespace UnityStandardAssets.ImageEffects
 			{
                 return null;
             }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+            m2Create = new Material (s);
+            createdMaterials.Add (m2Create);
+            m2Create.hideFlags = HideFlags.DontSave;
+                
+            return m2Create;
+		}
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
             else
 			{
                 m2Create = new Material (s);
@@ -64,12 +107,41 @@ namespace UnityStandardAssets.ImageEffects
                 else return null;
             }
         }
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
         void OnEnable ()
 		{
             isSupported = true;
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        void OnDestroy ()
+        {
+            RemoveCreatedMaterials ();    
+        }
+
+        private void RemoveCreatedMaterials ()
+        {
+            while (createdMaterials.Count > 0)
+            {
+                Material mat = createdMaterials[0];
+                createdMaterials.RemoveAt (0);
+#if UNITY_EDITOR
+                DestroyImmediate (mat);
+#else
+                Destroy(mat);
+#endif
+            }
+        }
+
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
         protected bool CheckSupport ()
 		{
             return CheckSupport (false);
@@ -94,7 +166,15 @@ namespace UnityStandardAssets.ImageEffects
             supportHDRTextures = SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGBHalf);
             supportDX11 = SystemInfo.graphicsShaderLevel >= 50 && SystemInfo.supportsComputeShaders;
 
+<<<<<<< HEAD
             if (!SystemInfo.supportsImageEffects || !SystemInfo.supportsRenderTextures)
+=======
+<<<<<<< HEAD
+            if (!SystemInfo.supportsImageEffects)
+=======
+            if (!SystemInfo.supportsImageEffects || !SystemInfo.supportsRenderTextures)
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 			{
                 NotSupported ();
                 return false;

@@ -58,7 +58,17 @@ Shader "Hidden/NoiseAndGrain" {
 		#else
         		o.uv_screen = v.vertex.xy;
 		#endif
+<<<<<<< HEAD
 			
+=======
+<<<<<<< HEAD
+
+			o.uv_screen = UnityStereoTransformScreenSpaceTex(o.uv_screen);
+
+=======
+			
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 			// different tiling for 3 channels
 			o.uvRg = v.texcoord.xyxy + v.texcoord1.xyxy * _NoiseTilingPerChannel.rrgg * _NoiseTex_TexelSize.xyxy;
 			o.uvB = v.texcoord.xy + v.texcoord1.xy * _NoiseTilingPerChannel.bb * _NoiseTex_TexelSize.xy;

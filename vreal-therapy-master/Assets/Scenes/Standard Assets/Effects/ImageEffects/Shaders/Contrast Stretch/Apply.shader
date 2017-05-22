@@ -27,12 +27,27 @@ struct v2f {
 
 uniform sampler2D _MainTex;
 uniform sampler2D _AdaptTex;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+half4 _MainTex_ST;
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 v2f vert (appdata_img v)
 {
 	v2f o;
 	o.pos = UnityObjectToClipPos (v.vertex);
+<<<<<<< HEAD
 	o.uv[0] = MultiplyUV (UNITY_MATRIX_TEXTURE0, v.texcoord);
+=======
+<<<<<<< HEAD
+	o.uv[0] = MultiplyUV (UNITY_MATRIX_TEXTURE0, UnityStereoScreenSpaceUVAdjust(v.texcoord, _MainTex_ST));
+=======
+	o.uv[0] = MultiplyUV (UNITY_MATRIX_TEXTURE0, v.texcoord);
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	o.uv[1] = float2(0.5,0.5);
 	return o;
 }

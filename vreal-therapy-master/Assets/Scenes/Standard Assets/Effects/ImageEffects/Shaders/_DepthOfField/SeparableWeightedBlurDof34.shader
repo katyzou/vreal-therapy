@@ -16,7 +16,17 @@ Shader "Hidden/SeparableWeightedBlurDof34" {
 	half4 _Threshhold;
 	sampler2D _MainTex;		
 	sampler2D _TapHigh;
+<<<<<<< HEAD
 		
+=======
+<<<<<<< HEAD
+	
+	half4 _MainTex_ST;
+
+=======
+		
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	struct v2f {
 		half4 pos : SV_POSITION;
 		half2 uv : TEXCOORD0;
@@ -37,10 +47,23 @@ Shader "Hidden/SeparableWeightedBlurDof34" {
 	v2f vert (appdata_img v) {
 		v2f o;
 		o.pos = UnityObjectToClipPos(v.vertex);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		o.uv.xy = UnityStereoScreenSpaceUVAdjust(v.texcoord.xy, _MainTex_ST);
+		o.uv01 =  UnityStereoScreenSpaceUVAdjust(v.texcoord.xyxy + offsets.xyxy * half4(1,1, -1,-1), _MainTex_ST);
+		o.uv23 =  UnityStereoScreenSpaceUVAdjust(v.texcoord.xyxy + offsets.xyxy * half4(1,1, -1,-1) * 2.0, _MainTex_ST);
+		o.uv45 =  UnityStereoScreenSpaceUVAdjust(v.texcoord.xyxy + offsets.xyxy * half4(1,1, -1,-1) * 3.0, _MainTex_ST);
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		o.uv.xy = v.texcoord.xy;
 		o.uv01 =  v.texcoord.xyxy + offsets.xyxy * half4(1,1, -1,-1);
 		o.uv23 =  v.texcoord.xyxy + offsets.xyxy * half4(1,1, -1,-1) * 2.0;
 		o.uv45 =  v.texcoord.xyxy + offsets.xyxy * half4(1,1, -1,-1) * 3.0;
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 		return o;  
 	}
@@ -112,7 +135,15 @@ Shader "Hidden/SeparableWeightedBlurDof34" {
 		
 		return color;
 	}
+<<<<<<< HEAD
 	
+=======
+<<<<<<< HEAD
+	 
+=======
+	
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	half4 fragBlurDark (v2f i) : SV_Target {
 		half4 blurredColor = half4 (0,0,0,0);
 
@@ -174,11 +205,28 @@ Shader "Hidden/SeparableWeightedBlurDof34" {
 	
 	sampler2D _TapMedium;
 	sampler2D _TapLow;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+	half4 _TapMedium_ST;
+	half4 _TapLow_ST;
+
+	half4 fragMixMediumAndLowTap (v2fSingle i) : SV_Target 
+	{
+	 	half4 tapMedium = tex2D (_TapMedium, UnityStereoScreenSpaceUVAdjust(i.uv.xy, _TapMedium_ST));
+		half4 tapLow = tex2D (_TapLow, UnityStereoScreenSpaceUVAdjust(i.uv.xy, _TapLow_ST));
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	
 	half4 fragMixMediumAndLowTap (v2fSingle i) : SV_Target 
 	{
 	 	half4 tapMedium = tex2D (_TapMedium, i.uv.xy);
 		half4 tapLow = tex2D (_TapLow, i.uv.xy);
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		tapMedium.a *= tapMedium.a;
 		
 		tapLow.rgb = lerp (tapMedium.rgb, tapLow.rgb, (tapMedium.a * tapMedium.a));
@@ -196,7 +244,14 @@ Subshader {
       
       #pragma vertex vert
       #pragma fragment fragBlurWeighted
+<<<<<<< HEAD
       
+=======
+<<<<<<< HEAD
+=======
+      
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
       ENDCG
   }
   Pass {   
@@ -204,7 +259,14 @@ Subshader {
       
       #pragma vertex vert
       #pragma fragment fragBlurUnweighted
+<<<<<<< HEAD
       
+=======
+<<<<<<< HEAD
+=======
+      
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
       ENDCG
   }    
   
@@ -215,7 +277,14 @@ Subshader {
       
       #pragma vertex vert
       #pragma fragment fragBlurUnweightedDark
+<<<<<<< HEAD
       
+=======
+<<<<<<< HEAD
+=======
+      
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
       ENDCG
   }
   Pass {    
@@ -223,7 +292,14 @@ Subshader {
       
       #pragma vertex vertSingleTex
       #pragma fragment fragMixMediumAndLowTap
+<<<<<<< HEAD
       
+=======
+<<<<<<< HEAD
+=======
+      
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
       ENDCG
   }   
   
@@ -234,7 +310,14 @@ Subshader {
       
       #pragma vertex vert
       #pragma fragment fragBlurDark
+<<<<<<< HEAD
       
+=======
+<<<<<<< HEAD
+=======
+      
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
       ENDCG
   }
 }

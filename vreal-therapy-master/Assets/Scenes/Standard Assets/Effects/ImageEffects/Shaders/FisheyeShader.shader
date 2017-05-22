@@ -16,7 +16,16 @@ Shader "Hidden/FisheyeShader" {
 	};
 	
 	sampler2D _MainTex;
+<<<<<<< HEAD
 	
+=======
+<<<<<<< HEAD
+	half4 _MainTex_ST;
+
+=======
+	
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	float2 intensity;
 	
 	v2f vert( appdata_img v ) 
@@ -36,7 +45,15 @@ Shader "Hidden/FisheyeShader" {
 		realCoordOffs.x = (1-coords.y * coords.y) * intensity.y * (coords.x); 
 		realCoordOffs.y = (1-coords.x * coords.x) * intensity.x * (coords.y);
 		
+<<<<<<< HEAD
 		half4 color = tex2D (_MainTex, i.uv - realCoordOffs);	 
+=======
+<<<<<<< HEAD
+		half4 color = tex2D (_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv - realCoordOffs, _MainTex_ST));
+=======
+		half4 color = tex2D (_MainTex, i.uv - realCoordOffs);	 
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		
 		return color;
 	}

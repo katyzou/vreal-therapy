@@ -15,6 +15,13 @@ Shader "Hidden/FastBloom" {
 		sampler2D _Bloom;
 				
 		uniform half4 _MainTex_TexelSize;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		half4 _MainTex_ST;
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		
 		uniform half4 _Parameter;
 		uniform half4 _OffsetsA;
@@ -38,10 +45,23 @@ Shader "Hidden/FastBloom" {
 			v2f_simple o;
 			
 			o.pos = UnityObjectToClipPos (v.vertex);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        	o.uv = UnityStereoScreenSpaceUVAdjust(v.texcoord, _MainTex_ST);
+        	
+        #if UNITY_UV_STARTS_AT_TOP
+        	o.uv2 = o.uv;
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
         	o.uv = v.texcoord;		
         	
         #if UNITY_UV_STARTS_AT_TOP
         	o.uv2 = v.texcoord;				
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
         	if (_MainTex_TexelSize.y < 0.0)
         		o.uv.y = 1.0 - o.uv.y;
         #endif
@@ -63,10 +83,23 @@ Shader "Hidden/FastBloom" {
 			v2f_tap o;
 
 			o.pos = UnityObjectToClipPos (v.vertex);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        	o.uv20 = UnityStereoScreenSpaceUVAdjust(v.texcoord + _MainTex_TexelSize.xy, _MainTex_ST);
+			o.uv21 = UnityStereoScreenSpaceUVAdjust(v.texcoord + _MainTex_TexelSize.xy * half2(-0.5h,-0.5h), _MainTex_ST);
+			o.uv22 = UnityStereoScreenSpaceUVAdjust(v.texcoord + _MainTex_TexelSize.xy * half2(0.5h,-0.5h), _MainTex_ST);
+			o.uv23 = UnityStereoScreenSpaceUVAdjust(v.texcoord + _MainTex_TexelSize.xy * half2(-0.5h,0.5h), _MainTex_ST);
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
         	o.uv20 = v.texcoord + _MainTex_TexelSize.xy;				
 			o.uv21 = v.texcoord + _MainTex_TexelSize.xy * half2(-0.5h,-0.5h);	
 			o.uv22 = v.texcoord + _MainTex_TexelSize.xy * half2(0.5h,-0.5h);		
 			o.uv23 = v.texcoord + _MainTex_TexelSize.xy * half2(-0.5h,0.5h);		
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 			return o; 
 		}					
@@ -147,7 +180,15 @@ Shader "Hidden/FastBloom" {
 			half4 color = 0;
   			for( int l = 0; l < 7; l++ )  
   			{   
+<<<<<<< HEAD
 				half4 tap = tex2D(_MainTex, coords);
+=======
+<<<<<<< HEAD
+				half4 tap = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(coords, _MainTex_ST));
+=======
+				half4 tap = tex2D(_MainTex, coords);
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 				color += tap * curve4[l];
 				coords += netFilterWidth;
   			}
@@ -161,6 +202,16 @@ Shader "Hidden/FastBloom" {
 			o.pos = UnityObjectToClipPos (v.vertex);
 			
 			o.uv = v.texcoord.xy;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+			half offsetMagnitude = _MainTex_TexelSize.x * _Parameter.x;
+			o.offs[0] = v.texcoord.xyxy + offsetMagnitude * half4(-3.0h, 0.0h, 3.0h, 0.0h);
+			o.offs[1] = v.texcoord.xyxy + offsetMagnitude * half4(-2.0h, 0.0h, 2.0h, 0.0h);
+			o.offs[2] = v.texcoord.xyxy + offsetMagnitude * half4(-1.0h, 0.0h, 1.0h, 0.0h);
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 			half2 netFilterWidth = _MainTex_TexelSize.xy * half2(1.0, 0.0) * _Parameter.x; 
 			half4 coords = -netFilterWidth.xyxy * 3.0;
 			
@@ -169,6 +220,10 @@ Shader "Hidden/FastBloom" {
 			o.offs[1] = v.texcoord.xyxy + coords * half4(1.0h,1.0h,-1.0h,-1.0h);
 			coords += netFilterWidth.xyxy;
 			o.offs[2] = v.texcoord.xyxy + coords * half4(1.0h,1.0h,-1.0h,-1.0h);
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 			return o; 
 		}		
@@ -179,6 +234,16 @@ Shader "Hidden/FastBloom" {
 			o.pos = UnityObjectToClipPos (v.vertex);
 			
 			o.uv = half4(v.texcoord.xy,1,1);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+			half offsetMagnitude = _MainTex_TexelSize.y * _Parameter.x;
+			o.offs[0] = v.texcoord.xyxy + offsetMagnitude * half4(0.0h, -3.0h, 0.0h, 3.0h);
+			o.offs[1] = v.texcoord.xyxy + offsetMagnitude * half4(0.0h, -2.0h, 0.0h, 2.0h);
+			o.offs[2] = v.texcoord.xyxy + offsetMagnitude * half4(0.0h, -1.0h, 0.0h, 1.0h);
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 			half2 netFilterWidth = _MainTex_TexelSize.xy * half2(0.0, 1.0) * _Parameter.x;
 			half4 coords = -netFilterWidth.xyxy * 3.0;
 			
@@ -187,6 +252,10 @@ Shader "Hidden/FastBloom" {
 			o.offs[1] = v.texcoord.xyxy + coords * half4(1.0h,1.0h,-1.0h,-1.0h);
 			coords += netFilterWidth.xyxy;
 			o.offs[2] = v.texcoord.xyxy + coords * half4(1.0h,1.0h,-1.0h,-1.0h);
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 			return o; 
 		}	
@@ -195,12 +264,27 @@ Shader "Hidden/FastBloom" {
 		{
 			half2 uv = i.uv.xy;
 			
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+			half4 color = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv, _MainTex_ST)) * curve4[3];
+			
+  			for( int l = 0; l < 3; l++ )  
+  			{   
+				half4 tapA = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.offs[l].xy, _MainTex_ST));
+				half4 tapB = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.offs[l].zw, _MainTex_ST));
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 			half4 color = tex2D(_MainTex, i.uv) * curve4[3];
 			
   			for( int l = 0; l < 3; l++ )  
   			{   
 				half4 tapA = tex2D(_MainTex, i.offs[l].xy);
 				half4 tapB = tex2D(_MainTex, i.offs[l].zw); 
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 				color += (tapA + tapB) * curve4[l];
   			}
 

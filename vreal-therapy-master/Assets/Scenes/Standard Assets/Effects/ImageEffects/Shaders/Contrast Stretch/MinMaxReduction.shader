@@ -24,6 +24,13 @@ struct v2f {
 }; 
 
 uniform sampler2D _MainTex;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+half4 _MainTex_ST;
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 v2f vert (appdata_img v) {
 	v2f o;
@@ -31,10 +38,23 @@ v2f vert (appdata_img v) {
 	float2 uv = MultiplyUV (UNITY_MATRIX_TEXTURE0, v.texcoord);
 	
 	// Compute UVs to sample 2x2 pixel block.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	o.uv[0] = UnityStereoScreenSpaceUVAdjust(uv + float2(0,0), _MainTex_ST);
+	o.uv[1] = UnityStereoScreenSpaceUVAdjust(uv + float2(0,1), _MainTex_ST);
+	o.uv[2] = UnityStereoScreenSpaceUVAdjust(uv + float2(1,0), _MainTex_ST);
+	o.uv[3] = UnityStereoScreenSpaceUVAdjust(uv + float2(1,1), _MainTex_ST);
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	o.uv[0] = uv + float2(0,0);
 	o.uv[1] = uv + float2(0,1);
 	o.uv[2] = uv + float2(1,0);
 	o.uv[3] = uv + float2(1,1);
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	return o;
 }
 

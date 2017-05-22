@@ -21,11 +21,20 @@ namespace UnityStandardAssets.ImageEffects
 
         override protected void Start()
         {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
             if (!SystemInfo.supportsRenderTextures)
             {
                 enabled = false;
                 return;
             }
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
             base.Start();
         }
 

@@ -1,5 +1,18 @@
 fileFormatVersion: 2
 guid: 9ef26a39a400bec44a36b85fd38a2d65
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+TextureImporter:
+  fileIDToRecycleName: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 timeCreated: 1465718179
 licenseType: Store
 TextureImporter:
@@ -10,6 +23,10 @@ TextureImporter:
     enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -17,6 +34,19 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
     heightScale: .25
     normalMapFilter: 0
   isReadable: 0
@@ -27,6 +57,10 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: 3
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
   maxTextureSize: 512
   textureSettings:
     filterMode: 1
@@ -35,12 +69,48 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 1
   lightmap: 0
+<<<<<<< HEAD
   rGBM: 0
+=======
+<<<<<<< HEAD
+=======
+  rGBM: 0
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
   compressionQuality: 50
   spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
@@ -49,6 +119,10 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites: []
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
   spritePackingTag: 
   userData: 
   assetBundleName: 

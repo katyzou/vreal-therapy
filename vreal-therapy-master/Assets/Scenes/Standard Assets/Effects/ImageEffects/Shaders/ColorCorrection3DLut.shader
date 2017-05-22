@@ -3,6 +3,13 @@
 Shader "Hidden/ColorCorrection3DLut" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "" {}		
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		_ClutTex ("-", 3D) = "" {}
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	}
 
 CGINCLUDE
@@ -17,6 +24,14 @@ struct v2f {
 sampler2D _MainTex;
 sampler3D _ClutTex;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+half4 _MainTex_ST;
+
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 float _Scale;
 float _Offset;
 
@@ -24,7 +39,15 @@ v2f vert( appdata_img v )
 {
 	v2f o;
 	o.pos = UnityObjectToClipPos(v.vertex);
+<<<<<<< HEAD
 	o.uv =  v.texcoord.xy;	
+=======
+<<<<<<< HEAD
+	o.uv = UnityStereoScreenSpaceUVAdjust(v.texcoord.xy, _MainTex_ST);
+=======
+	o.uv =  v.texcoord.xy;	
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	return o;
 } 
 

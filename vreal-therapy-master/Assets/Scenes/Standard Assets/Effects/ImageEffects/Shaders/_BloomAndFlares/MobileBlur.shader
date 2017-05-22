@@ -15,8 +15,24 @@ Shader "Hidden/FastBlur" {
 		sampler2D _Bloom;
 				
 		uniform half4 _MainTex_TexelSize;
+<<<<<<< HEAD
 		uniform half4 _Parameter;
 
+=======
+<<<<<<< HEAD
+		half4 _MainTex_ST;
+
+		half4 _Bloom_ST;
+
+		uniform half4 _Parameter;
+
+		
+
+=======
+		uniform half4 _Parameter;
+
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		struct v2f_tap
 		{
 			float4 pos : SV_POSITION;
@@ -31,10 +47,23 @@ Shader "Hidden/FastBlur" {
 			v2f_tap o;
 
 			o.pos = UnityObjectToClipPos (v.vertex);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        	o.uv20 = UnityStereoScreenSpaceUVAdjust(v.texcoord + _MainTex_TexelSize.xy, _MainTex_ST);
+			o.uv21 = UnityStereoScreenSpaceUVAdjust(v.texcoord + _MainTex_TexelSize.xy * half2(-0.5h,-0.5h), _MainTex_ST);
+			o.uv22 = UnityStereoScreenSpaceUVAdjust(v.texcoord + _MainTex_TexelSize.xy * half2(0.5h,-0.5h), _MainTex_ST);
+			o.uv23 = UnityStereoScreenSpaceUVAdjust(v.texcoord + _MainTex_TexelSize.xy * half2(-0.5h,0.5h), _MainTex_ST);
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
         	o.uv20 = v.texcoord + _MainTex_TexelSize.xy;				
 			o.uv21 = v.texcoord + _MainTex_TexelSize.xy * half2(-0.5h,-0.5h);	
 			o.uv22 = v.texcoord + _MainTex_TexelSize.xy * half2(0.5h,-0.5h);		
 			o.uv23 = v.texcoord + _MainTex_TexelSize.xy * half2(-0.5h,0.5h);		
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 			return o; 
 		}					
@@ -100,7 +129,15 @@ Shader "Hidden/FastBlur" {
 			half4 color = 0;
   			for( int l = 0; l < 7; l++ )  
   			{   
+<<<<<<< HEAD
 				half4 tap = tex2D(_MainTex, coords);
+=======
+<<<<<<< HEAD
+				half4 tap = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(coords, _MainTex_ST));
+=======
+				half4 tap = tex2D(_MainTex, coords);
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 				color += tap * curve4[l];
 				coords += netFilterWidth;
   			}
@@ -113,6 +150,20 @@ Shader "Hidden/FastBlur" {
 			v2f_withBlurCoordsSGX o;
 			o.pos = UnityObjectToClipPos (v.vertex);
 			
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+			o.uv = UnityStereoScreenSpaceUVAdjust(v.texcoord.xy, _MainTex_ST);
+
+			half offsetMagnitude = _MainTex_TexelSize.x * _Parameter.x;
+			o.offs[0] = UnityStereoScreenSpaceUVAdjust(v.texcoord.xyxy + offsetMagnitude * half4(-3.0h, 0.0h, 3.0h, 0.0h), _MainTex_ST);
+			o.offs[1] = UnityStereoScreenSpaceUVAdjust(v.texcoord.xyxy + offsetMagnitude * half4(-2.0h, 0.0h, 2.0h, 0.0h), _MainTex_ST);
+			o.offs[2] = UnityStereoScreenSpaceUVAdjust(v.texcoord.xyxy + offsetMagnitude * half4(-1.0h, 0.0h, 1.0h, 0.0h), _MainTex_ST);
+
+			return o; 
+		}
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 			o.uv = v.texcoord.xy;
 			half2 netFilterWidth = _MainTex_TexelSize.xy * half2(1.0, 0.0) * _Parameter.x; 
 			half4 coords = -netFilterWidth.xyxy * 3.0;
@@ -125,12 +176,30 @@ Shader "Hidden/FastBlur" {
 
 			return o; 
 		}		
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		
 		v2f_withBlurCoordsSGX vertBlurVerticalSGX (appdata_img v)
 		{
 			v2f_withBlurCoordsSGX o;
 			o.pos = UnityObjectToClipPos (v.vertex);
 			
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+			o.uv = half4(UnityStereoScreenSpaceUVAdjust(v.texcoord.xy, _MainTex_ST),1,1);
+
+			half offsetMagnitude = _MainTex_TexelSize.y * _Parameter.x;
+			o.offs[0] = UnityStereoScreenSpaceUVAdjust(v.texcoord.xyxy + offsetMagnitude * half4(0.0h, -3.0h, 0.0h, 3.0h), _MainTex_ST);
+			o.offs[1] = UnityStereoScreenSpaceUVAdjust(v.texcoord.xyxy + offsetMagnitude * half4(0.0h, -2.0h, 0.0h, 2.0h), _MainTex_ST);
+			o.offs[2] = UnityStereoScreenSpaceUVAdjust(v.texcoord.xyxy + offsetMagnitude * half4(0.0h, -1.0h, 0.0h, 1.0h), _MainTex_ST);
+
+			return o; 
+		}
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 			o.uv = half4(v.texcoord.xy,1,1);
 			half2 netFilterWidth = _MainTex_TexelSize.xy * half2(0.0, 1.0) * _Parameter.x;
 			half4 coords = -netFilterWidth.xyxy * 3.0;
@@ -143,6 +212,10 @@ Shader "Hidden/FastBlur" {
 
 			return o; 
 		}	
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 		half4 fragBlurSGX ( v2f_withBlurCoordsSGX i ) : SV_Target
 		{

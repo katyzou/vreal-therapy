@@ -17,12 +17,30 @@ Shader "Hidden/ConvertDepth" {
 		
 	sampler2D _MainTex;
 	sampler2D_float _CameraDepthTexture;
+<<<<<<< HEAD
 		
+=======
+<<<<<<< HEAD
+	
+	half4 _CameraDepthTexture_ST;
+
+=======
+		
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	v2f vert( appdata_img v ) 
 	{
 		v2f o;
 		o.pos = UnityObjectToClipPos(v.vertex);
+<<<<<<< HEAD
 		o.uv =  v.texcoord.xy;
+=======
+<<<<<<< HEAD
+		o.uv = UnityStereoScreenSpaceUVAdjust(v.texcoord.xy, _CameraDepthTexture_ST);
+=======
+		o.uv =  v.texcoord.xy;
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 		return o;
 	}
 	

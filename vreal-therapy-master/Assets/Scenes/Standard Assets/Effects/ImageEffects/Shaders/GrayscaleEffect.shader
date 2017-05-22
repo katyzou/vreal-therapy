@@ -16,10 +16,24 @@ CGPROGRAM
 uniform sampler2D _MainTex;
 uniform sampler2D _RampTex;
 uniform half _RampOffset;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+half4 _MainTex_ST;
+
+fixed4 frag (v2f_img i) : SV_Target
+{
+	fixed4 original = tex2D(_MainTex, UnityStereoScreenSpaceUVAdjust(i.uv, _MainTex_ST));
+=======
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 
 fixed4 frag (v2f_img i) : SV_Target
 {
 	fixed4 original = tex2D(_MainTex, i.uv);
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
 	fixed grayscale = Luminance(original.rgb);
 	half2 remap = half2 (grayscale + _RampOffset, .5);
 	fixed4 output = tex2D(_RampTex, remap);

@@ -91,7 +91,15 @@ namespace UnityStandardAssets.ImageEffects
         void CreateComputeResources () {
             if (cbDrawArgs == null)
             {
+<<<<<<< HEAD
                 cbDrawArgs = new ComputeBuffer (1, 16, ComputeBufferType.IndirectArguments);
+=======
+<<<<<<< HEAD
+                cbDrawArgs = new ComputeBuffer (1, 16, ComputeBufferType.DrawIndirect);
+=======
+                cbDrawArgs = new ComputeBuffer (1, 16, ComputeBufferType.IndirectArguments);
+>>>>>>> refs/remotes/origin/master
+>>>>>>> 87fb0707558dbdf9a88b039e2227592365d113ff
                 var args= new int[4];
                 args[0] = 0; args[1] = 1; args[2] = 0; args[3] = 0;
                 cbDrawArgs.SetData (args);
